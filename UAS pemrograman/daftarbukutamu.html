@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buku Tamu</title>
+
+    <style>
+        body{
+            background-color: #1F6886;;
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        h1{
+            background-color: darkred;
+        }
+
+        table{
+            text-align: center;
+        }
+    </style>
+
+</head>
+<body onload="tampilBukuTamu()">
+    <h1>Buku Tamu</h1>
+    <form onsubmit="simpanBukuTamu()">
+        <input type="text" name="" id="nama" placeholder="Nama Anda"><br><br>
+        <input type="email" name="" id="email" placeholder="Email Anda"><br><br>
+        <textarea name="" id="pesan" cols="40" rows="5" placeholder="Pesan Anda "></textarea><br><br>
+        <button type="submit">Simpan</button><br><br>
+    </form>
+
+    <h2>Daftar Buku Tamu</h2>
+    <div id="daftar"></div>
+    <table border="1" width="500">
+        <tr>
+            <th>Nama</th>
+            <th>Email</th>
+            <th>Pesan</th>
+        </tr>
+    </table>
+
+    <script>
+        let bukuTamu = [];
+        const simpanBukuTamu = () => {      
+            let nama = document.getElementById("nama").value;
+            let email = document.getElementById("email").value;
+            let pesan = document.getElementById("pesan").value;
+
+            let tamu = { nama: nama, email: email, pesan: pesan };
+            let bukuTamuLama = localStorage.getItem("bukuTamu");
+            if(bukuTamuLama != null){
+                bukuTamu = JSON.parse(bukuTamuLama)
+            }
+
+            bukuTamu.push(tamu); 
+            localStorage.setItem("bukuTamu", JSON.stringify(bukuTamu))         
+        }
+
+        const tampilBukuTamu = () =>{
+            let table = document.getElementsByTagName("table")[0];
+            
+            let dataBukuTamu = localStorage.getItem("bukuTamu");
+            if(dataBukuTamu !=null){
+                dataBukuTamu = JSON.parse(dataBukuTamu);
+                dataBukuTamu.forEach(element => {
+                    let row     = table.insertRow();
+                    let colnama  = row.insertCell(0);
+                    let colemail = row.insertCell(1);
+                    let colpes  = row.insertCell(2);
+
+                    colnama.innerHTML = element.nama;
+                    colemail.innerHTML = element.email;
+                    colpes.innerHTML = element.pesan;
+                });
+            }
+        }
+    </script>
+</body>
+</html>

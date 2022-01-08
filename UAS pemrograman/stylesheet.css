@@ -1,0 +1,217 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family: sans-serif;
+}
+
+body{
+    background-image: url(images/Komputer.jfif);
+}
+
+header{
+    height: 70px;
+    background-color: orange;
+}
+
+header h1{
+    display: inline-block;
+    float: left;
+    padding: 15px 24px;
+    text-transform: uppercase;
+}
+
+header h1 a{
+    transition: 3s;
+}
+
+header h1 a:hover{
+    color: #f84744;
+}
+
+header ul{
+    float: right;
+}
+
+header ul li{
+    padding: 24px;
+    display: inline-block;
+}
+
+header ul li{
+    transition: 3s;
+}
+
+header ul li a:hover{
+    color: green;
+}
+
+li:hover{
+    background-color: darkred;
+}
+
+a{
+    text-decoration: none;
+}
+
+.container{
+    width: 90%;
+    margin:0 auto;
+}
+
+.container::after{
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.banner{
+    background-color: #1F6886;
+    padding: 100px 0;
+}
+
+section{
+    padding: 50px 0;
+}
+
+.banner img{
+    width: 100px;
+    border-radius: 10px;
+    box-shadow: 0 3px 5px #ddd;
+    margin-bottom: 10px;
+}
+
+.banner h2,p{
+    color: #fff;
+}
+
+.banner p{
+    font-size: 18px;
+}
+
+.banner h2{
+    margin-bottom: 10px;
+}
+
+.banner-left{
+    padding-left: 24px;
+}
+
+section h3{
+    padding-bottom: 20px;
+    text-align: center;
+    margin: 20px;
+    position: relative;
+}
+
+section h3::before{
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: 0;
+    width: 120px;
+    height: 1px;
+    background-color: #ddd;
+    left: calc(50% - 60px);
+}
+
+section h3::after{
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: -1px;
+    width: 40px;
+    height: 4px;
+    background-color:red;
+    left: calc(50% - 20px);
+}
+
+.about p{
+    text-align: justify;
+    text-indent: 30px;
+    line-height: 25px;
+    margin-bottom: 15px;
+    color: white
+}
+
+.skills{
+    background-color: #f9f9f9;
+}
+
+.bar{
+    height: 30px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    margin: 5px 0 20px 0;
+}
+
+.bar .nilai{
+    height: 30px;
+    background-color: orangered;
+    display: inline-block;
+    color: #fff;
+    text-align: center;
+}
+
+.html{
+    width: 100%;
+}
+
+.css{
+    width: 90%;
+}
+
+.js{
+    width: 90%;
+}
+
+.php{
+    width: 95%;
+}
+
+.biodata{
+    background-color: white;
+    padding:15px ;
+    text-align: left;
+    border: 1px solid gray;
+    border-radius: 3px;
+    color: black;
+}
+
+.biodata p{
+    color: black;
+}
+
+.biodata h4{
+    font-size: 45px;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.biodata p{
+    text-align: center;
+    font-size: 15px;
+}
+
+footer{
+    background-color: #333;
+    padding: 50px;
+    text-align: center;
+}
+
+footer small{
+    color: #fff;
+}
+
+.mobile-menu{
+    float: right;
+    display: none;
+}
+
+@media(max-width: 768px){
+    .mobile-menu{
+        display: block;
+    }
+    header ul{
+        display: none;
+    }
+}
